@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: nodejs-gtmjauun-gitops
+  description: This is GitOps manifest for nodejs-gtmjauun   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=nodejs-gtmjauun
+    backstage.io/kubernetes-id: nodejs-gtmjauun 
+    backstage.io/techdocs-ref: dir:. 
+    github.com/project-slug: rhtap-test-org/nodejs-gtmjauun-gitops
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:nodejs-gtmjauun
